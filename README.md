@@ -1,6 +1,6 @@
 # Postgraduate MCP Travel Agent — Booking MCP Server
 
-Quarkus [MCP server](https://docs.quarkiverse.io/quarkus-mcp-server/dev/index.html) that exposes travel **booking tools** over HTTP/SSE. It holds booking lookup and cancellation logic that was extracted from the [travel-agency](../travel-agency/) AI agent so booking can run as a separate, reusable service.
+Quarkus [MCP server](https://docs.quarkiverse.io/quarkus-mcp-server/dev/index.html) that exposes travel **booking tools** over HTTP/SSE. It holds booking lookup and cancellation logic that was extracted from the [travel-agency](https://github.com/MatheusFilipeFreitas/Postgraduate-AI-Integration-Quarkus-Java) AI agent so booking can run as a separate, reusable service.
 
 This repository is part of a postgraduate course on integrating AI into Java applications with Quarkus and the Model Context Protocol (MCP).
 
@@ -9,7 +9,7 @@ This repository is part of a postgraduate course on integrating AI into Java app
 | Project | Role | Default port |
 |---------|------|--------------|
 | **booking-mcp-server** (this repo) | MCP server — booking tools (`getBookingDetails`, `cancelBooking`) | `8081` |
-| [travel-agency](../travel-agency/) | AI travel agent — RAG + Ollama, consumes booking tools via MCP client | `8080` |
+| [travel-agency](https://github.com/MatheusFilipeFreitas/Postgraduate-AI-Integration-Quarkus-Java) | AI travel agent — RAG + Ollama, consumes booking tools via MCP client | `8080` |
 
 Clone both repositories side by side (or adjust the MCP URL in travel-agency if you deploy elsewhere):
 
@@ -49,7 +49,7 @@ Quarkus Dev UI (dev mode only): [http://localhost:8081/q/dev/](http://localhost:
 
 ### 2. Connect travel-agency
 
-Start [travel-agency](../travel-agency/) on port `8080`. It connects to this server via:
+Start [travel-agency](https://github.com/MatheusFilipeFreitas/Postgraduate-AI-Integration-Quarkus-Java) on port `8080`. It connects to this server via:
 
 ```properties
 quarkus.langchain4j.mcp.booking.transport-type=http
@@ -64,7 +64,7 @@ curl -X POST http://localhost:8080/travel \
   -d "What are the details of booking 12345?"
 ```
 
-See the [travel-agency README](../travel-agency/README.md) for full setup (Ollama, PostgreSQL, RAG).
+See the [travel-agency README](https://github.com/MatheusFilipeFreitas/Postgraduate-AI-Integration-Quarkus-Java/blob/main/README.md) for full setup (Ollama, PostgreSQL, RAG).
 
 ## Mock booking data
 
@@ -125,7 +125,7 @@ Native executable:
 
 - [Quarkus MCP Server](https://docs.quarkiverse.io/quarkus-mcp-server/dev/index.html)
 - [Quarkus LangChain4j — MCP client](https://docs.quarkiverse.io/quarkus-langchain4j/dev/mcp.html)
-- [travel-agency README](../travel-agency/README.md)
+- [travel-agency README](https://github.com/MatheusFilipeFreitas/Postgraduate-AI-Integration-Quarkus-Java/blob/main/README.md)
 
 ## Author
 
