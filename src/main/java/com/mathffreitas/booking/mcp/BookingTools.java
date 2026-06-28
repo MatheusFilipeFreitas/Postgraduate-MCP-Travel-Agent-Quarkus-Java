@@ -36,10 +36,10 @@ public class BookingTools {
     public String cancelBooking(
             @ToolArg(description = "Numeric booking identifier to cancel")
             long bookingId,
-            @ToolArg(description = "Customer last name as registered on the booking, used to verify identity before cancellation")
-            String customerLastName
+            @ToolArg(description = "Customer name as registered on the booking, used to verify identity before cancellation")
+            String name
     ) {
-        return bookingService.cancelBooking(bookingId, customerLastName)
+        return bookingService.cancelBooking(bookingId, name)
                 .map(Booking::toString)
                 .orElse("Cound not find booking with id " + bookingId);
     }

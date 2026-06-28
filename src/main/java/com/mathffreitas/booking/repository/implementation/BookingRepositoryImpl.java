@@ -44,10 +44,10 @@ public class BookingRepositoryImpl implements BookingRepository {
     }
 
     @Override
-    public Optional<Booking> cancelBooking(long id, String customerLastName) {
+    public Optional<Booking> cancelBooking(long id, String name) {
         Booking booking = findById(id).orElse(null);
 
-        if (booking != null && booking.customerName().endsWith(customerLastName)) {
+        if (booking != null && booking.customerName().equals(name)) {
             Booking cancelledBooking = updateBookingStatus(booking, BookingStatus.CANCELLED);
             bookings.put(id, cancelledBooking);
             return Optional.of(cancelledBooking);
